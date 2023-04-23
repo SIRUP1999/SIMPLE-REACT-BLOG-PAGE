@@ -13,10 +13,10 @@ const UpdatedPost = ({
   const post = posts.find((post) => post.id.toString() === id)
 
   useEffect(() => {
-    setEditbody(post.body)
-    setEdittitle(post.title)
-    setEditbody('')
-    setEdittitle('')
+    if (post) {
+      setEditbody(post.body)
+      setEdittitle(post.title)
+    }
   }, [post, setEditbody, setEdittitle])
 
   return (
